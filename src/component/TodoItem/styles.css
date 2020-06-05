@@ -1,0 +1,37 @@
+.list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.list-item .todo-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.list-item .todo-item .todo-tag {
+  margin: 10px;
+  white-space: normal !important;
+  max-width: 115px;
+  word-break: break-all;
+}
+
+@media only screen and (min-width: 768px) {
+  .list-item .todo-item .todo-tag {
+    max-width: 500px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .list-item .todo-item .todo-tag {
+    max-width: 600px;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,IAAI,CAAC;EACD,gBAAgB,EAAE,kBAAkB;CACvC",
+    "sources": [
+        "base.scss",
+        "styles/utils/media-queries.scss"
+    ],
+    "names": [],
+    "file": "base.css"
+}
