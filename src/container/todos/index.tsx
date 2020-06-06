@@ -10,6 +10,7 @@ import { TodoLis } from '../../component/TodoList'
 import { message } from 'antd'
 
 import './style.css'
+import { Sider } from '../MenuLeft'
 
 interface TodosContainerProps { }
 
@@ -31,23 +32,20 @@ export const TodosContainer: FC<TodosContainerProps> = () => {
         message.info('Todo state updated!');
     };
 
-    return (
-        <Row justify="center" align="middle" gutter={[0, 20]} className="todos-container">
-            <Col xs={{ span: '23' }} sm={{ span: '23' }} md={{ span: '21' }} lg={{ span: '20' }} xl={{ span: '18' }}>
-                <PageHeader title="Add Todo" subTitle="To add a todo, just fill the form below and click in add todo" />
+    return (       
+            <Col  xs={{ span: 18 }} sm={{ span: 18 }} md={{ span: 18 }} lg={{ span: 18 }} xl={{ span: 18 }}>
+                <PageHeader className='title-header' title="List Task" subTitle="To add a todo, just fill the form below and click in add todo" />
+                <Col xs={{ span: 23 }} sm={{ span: 23 }} md={{ span: 21 }} lg={{ span: 20 }} xl={{ span: 23 }}>
+                    <Card title="Create a new todo">
+                        <AddTodoForm onFormSubmit={handleFormSubmit} />
+                    </Card>
+                </Col>
+                <Col xs={{ span: 23 }} sm={{ span: 23 }} md={{ span: 21 }} lg={{ span: 20 }} xl={{ span: 23 }}>
+                    <Card title="Todo List">
+                        <TodoLis todos={todos} onTodoRemoval={handleRemoveTodo} onTodoToggle={handleTodoToggle} />
+                    </Card>
+                </Col>
             </Col>
-            <Col xs={{ span: 23 }} sm={{ span: 23 }} md={{ span: 21 }} lg={{ span: 20 }} xl={{ span: 18 }}>
-                <Card title="Create a new todo">
-                    <AddTodoForm onFormSubmit={handleFormSubmit} />
-                </Card>
-            </Col>
-            <Col xs={{ span: 23 }} sm={{ span: 23 }} md={{ span: 21 }} lg={{ span: 20 }} xl={{ span: 18 }}>
-                <Card title="Todo List">
-                    <TodoLis todos={todos} onTodoRemoval={handleRemoveTodo} onTodoToggle={handleTodoToggle} />
-                </Card>
-            </Col>
-
-        </Row>
     );
 
 };
